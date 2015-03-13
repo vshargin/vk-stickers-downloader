@@ -1,0 +1,1 @@
+for /r %%i in (*.png) do %1 -q 70 -lossless %%i -o %%~ni.webp
