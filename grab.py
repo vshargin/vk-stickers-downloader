@@ -44,8 +44,9 @@ def main():
 
   for pack_name, pack in generator:
     if 'range' in pack:
-      rs, re = pack['range']
-      urls = ["https://vk.com/images/stickers/%s/512.png" % str(i)
+      rs, re = pack['range'][0:2]
+      fmt = pack['range'][2] if len(pack['range']) > 2 else "https://vk.com/images/stickers/{}/512.png"
+      urls = ["https://vk.com/images/stickers/{}/512.png".format(i)
               for i in range(rs, re+1)]
     elif isinstance(pack, list):
       urls = pack

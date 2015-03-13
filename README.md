@@ -15,6 +15,7 @@ otto:
 
 # ...or use the `range' shorthand:
 foxy: {range: [233, 264]}
+foxy_alt: {range: [233, 264, "http://some.com/other/source/{}.png"]}
 ```
 
 ```
