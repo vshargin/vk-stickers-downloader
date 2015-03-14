@@ -1,8 +1,30 @@
-# VK stickers downloader
-## download.py
-Usage: `download.py [x] [y]`
+Bulk Image Downloader
+======================
 
-Downloads all stickers from https://vk.com/images/stickers/x/512.png to /y/512.png.
+aka VK Sticker Grabber
+
+## Usage
+
+```yaml
+# Either just specify URLs to grab, like this:
+otto:
+  - https://vk.com/images/stickers/346/512.png
+  - https://vk.com/images/stickers/347/512.png
+  - https://vk.com/images/stickers/348/512.png
+  - ...
+
+# ...or use the `range' shorthand:
+foxy: {range: [233, 264]}
+foxy_alt: {range: [233, 264, "http://some.com/other/source/{}.png"]}
+```
+
+```
+$ python3 grab.py config.yml
+$ ls
+foxy    otto    config.yml
+$ ls foxy
+1.png   2.png   ...
+```
 
 ## webpify.bat
 Usage: `webpify.bat [/path/to/cwebp]`
